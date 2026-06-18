@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,5 +24,109 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.story-body {
+  color: #0f172a;
+  line-height: 1.85;
+}
+
+.story-body p {
+  margin: 1.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.story-body h1,
+.story-body h2,
+.story-body h3,
+.story-body h4,
+.story-body h5,
+.story-body h6 {
+  font-family: var(--font-playfair), Georgia, serif;
+  margin: 2.25rem 0 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.story-body h1 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.story-body h2 {
+  font-size: clamp(1.75rem, 2vw, 2.5rem);
+}
+
+.story-body h3 {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+}
+
+.story-body strong,
+.story-body b {
+  font-weight: 700;
+}
+
+.story-body em,
+.story-body i {
+  font-style: italic;
+}
+
+.story-body a {
+  color: #c2410c;
+  text-decoration: underline;
+}
+
+.story-body ul,
+.story-body ol {
+  margin: 1rem 0 1rem 1.5rem;
+  padding: 0;
+}
+
+.story-body li {
+  margin: 0.75rem 0;
+}
+
+.story-body blockquote {
+  border-left: 4px solid #f97316;
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  color: #334155;
+  background: #f8fafc;
+}
+
+.story-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem auto;
+}
+
+.story-body figure {
+  margin: 1.75rem 0;
+}
+
+.story-body figcaption {
+  margin-top: 0.75rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.story-body hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0;
+}
+
+.header-title,
+.footer-title {
+  font-family: var(--font-playfair), Georgia, serif;
 }
