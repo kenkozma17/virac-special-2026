@@ -7,6 +7,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isStories = Boolean(pathname && pathname.startsWith("/stories"));
+  const isLightPage = Boolean(
+    pathname && (pathname.startsWith("/stories") || pathname.startsWith("/sign-up") || pathname.startsWith("/admin"))
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,19 +28,19 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between">
-        <a href="/" className={"header-title sm:text-2xl text-lg font-semibold " + (scrolled ? "text-slate-900" : isStories ? "text-slate-900" : "text-white")}>
+        <a href="/" className={"header-title sm:text-2xl text-lg font-semibold " + (scrolled ? "text-slate-900" : isLightPage ? "text-slate-900" : "text-white")}>
           Virac Special
         </a>
-        <nav className={`flex items-center gap-8 text-sm font-medium uppercase tracking-[0.25em] ${scrolled ? "text-slate-700" : isStories ? "text-slate-700" : "text-white"}`}>
+        <nav className={`flex items-center gap-8 text-sm font-medium uppercase tracking-[0.25em] ${scrolled ? "text-slate-700" : isLightPage ? "text-slate-700" : "text-white"}`}>
           <a
             href="/stories"
-            className={`transition ${(scrolled || isStories) ? "hover:text-slate-900" : "hover:text-slate-200"}`}
+            className={`transition ${(scrolled || isLightPage) ? "hover:text-slate-900" : "hover:text-slate-200"}`}
           >
             Stories
           </a>
           <a
             href="/contact"
-            className={`transition ${(scrolled || isStories) ? "hover:text-slate-900" : "hover:text-slate-200"}`}
+            className={`transition ${(scrolled || isLightPage) ? "hover:text-slate-900" : "hover:text-slate-200"}`}
           >
             Contact
           </a>

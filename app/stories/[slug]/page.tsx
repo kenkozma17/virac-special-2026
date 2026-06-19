@@ -82,11 +82,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       type: "article",
       images: image ? [{ url: image }] : undefined,
-      article: {
-        publishedTime: publishedAt || undefined,
-        authors: story.author ? [story.author] : undefined,
-        section: story.category || story.type || undefined,
-      },
+      publishedTime: publishedAt || undefined,
+      authors: story.author ? [story.author] : undefined,
+      section: story.category || story.type || undefined,
     },
     twitter: {
       card: image ? "summary_large_image" : "summary",
@@ -178,7 +176,7 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
                       className="text-base italic leading-8 border-l-4 border-red-600 pl-5"
                       style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
                     >
-                      {excerptText || "No excerpt available."}
+                      "{excerptText || "No excerpt available."}"
                     </blockquote>
                   </div>
                 </div>

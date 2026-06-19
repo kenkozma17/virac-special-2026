@@ -10,5 +10,5 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 export function createClient() {
-  return createSupabaseClient(supabaseUrl, supabaseKey);
+  return createSupabaseClient(supabaseUrl!, supabaseKey!);
 }

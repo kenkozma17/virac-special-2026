@@ -6,7 +6,7 @@ async function getRecentStories() {
   const { data, error } = await supabase
     .from("Stories")
     .select("*")
-    .order("created_at", { ascending: false })
+    .order("published_at", { ascending: false })
     .limit(3);
 
   if (error) {
