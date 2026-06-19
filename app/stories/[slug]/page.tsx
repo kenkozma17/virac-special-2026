@@ -73,19 +73,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = story.description || story.excerpt || story.summary || `Read ${title} on Virac.`;
   const image = story.large_image_url || story.thumbnail_url || story.image_url || story.cover_image;
   const publishedAt = story.published_at || story.published_date || story.created_at;
+  const openGraph: Metadata["openGraph"] = {
+    title,
+    description,
+    type: "article",
+    images: image ? [{ url: image }] : undefined,
+    publishedTime: publishedAt || undefined,
+    authors: story.author ? [story.author] : undefined,
+    section: story.category || story.type || undefined,
+  };
 
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      images: image ? [{ url: image }] : undefined,
-      publishedTime: publishedAt || undefined,
-      authors: story.author ? [story.author] : undefined,
-      section: story.category || story.type || undefined,
-    },
+    openGraph,
     twitter: {
       card: image ? "summary_large_image" : "summary",
       title,
