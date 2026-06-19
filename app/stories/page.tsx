@@ -23,14 +23,13 @@ export default async function StoriesPage() {
       <section className="relative flex min-h-[70vh] w-full items-center justify-start px-6 pt-[120px] pb-16 sm:px-10 bg-gradient-to-b from-[#F6F0FF] to-white">
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-start text-left">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-slate-600">
-            Editorial archive
+            Features & Narratives
           </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-6xl">
-            Stories that blend craft, culture, and cinematic storytelling.
+            Discover Virac, One Story at a Time
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
-            Explore the full collection with a clean, immersive layout. Each story is designed to stand on its own while fitting into a carefully curated editorial archive.
-          </p>
+            The truest way to know an island is through the tales of the people who call it home. Dive into our collection of profiles, local chronicles, and hidden histories, and let each narrative guide you to a deeper, more authentic discovery of Virac.          </p>
           <div className="mt-16 h-px w-full max-w-6xl bg-slate-400/30" />
         </div>
       </section>

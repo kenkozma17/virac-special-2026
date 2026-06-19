@@ -23,15 +23,15 @@ export default async function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       <section className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 py-12 sm:px-10">
-        <div className="max-w-5xl text-center z-10">
+        <div className="max-w-3xl text-center z-10">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-slate-200/90">
-            The future of immersive storytelling
+            The Pulse of the Island's Capital
           </p>
           <h1 className="mb-6 text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
-            Create cinematic experiences that span the full screen.
+            Discover Virac Through the Stories We Share
           </h1>
           <p className="mx-auto max-w-3xl leading-8 text-slate-200/90 text-base">
-            Launch your next project with a hero section designed for maximum impact. Use a bold image or video background, strong typography, and layered content to draw visitors into your story instantly.
+            Welcome to Virac Special, a print and digital publication dedicated to the narratives of our coastal town. From hidden histories to modern lives, we map the soul of Catanduanes through the art of storytelling.
           </p>
           <div className="mt-10 flex justify-center">
             <a
@@ -52,7 +52,7 @@ export default async function Home() {
             loop
             playsInline
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         </div>
       </section>
 
@@ -60,19 +60,16 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-start">
           <div className="space-y-4">
             <p className="text-sm uppercase tracking-[0.35em] text-slate-500">
-              Expand your creative canvas
+              Ink & Pixels
             </p>
             <h2 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
-              Build compelling sections with flexible layout and clear hierarchy.
+              Crafting a Living Anthology of Our Town
             </h2>
           </div>
 
           <div className="text-base leading-8 text-slate-600 sm:text-lg">
             <p>
-              Use a two-column layout to separate high-level messaging from supporting details. The left column introduces the concept with a strong subtitle and heading, while the right column delivers richer context and action-oriented copy.
-            </p>
-            <p className="mt-6">
-              This structure keeps attention focused on the main idea, improves readability, and makes it easy for visitors to scan before they dive deeper into the content.
+              We believe a community thrives on the tales it inherits and creates. Through our print editions and digital space, Virac Special serves as a modern archive for our town's folklore, milestones, and daily triumphs, ensuring the true voice of Virac is preserved for generations to come.
             </p>
           </div>
         </div>

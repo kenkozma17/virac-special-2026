@@ -39,7 +39,7 @@ export default function Navbar() {
             Stories
           </a>
           <a
-            href="/contact"
+            href="mailto:kevdkoz@gmail.com"
             className={`transition ${(scrolled || isLightPage) ? "hover:text-slate-900" : "hover:text-slate-200"}`}
           >
             Contact
