@@ -144,12 +144,12 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
             <header className="absolute inset-x-6 bottom-[100px] sm:inset-x-10">
               <div className="mx-auto w-full max-w-6xl">
                 <div className="max-w-3xl">
-                  <p className={hasImage ? "text-sm uppercase tracking-[0.35em] text-slate-300" : "text-sm uppercase tracking-[0.35em] text-slate-600"}>
+                  <p className={hasImage ? "text-xs uppercase tracking-[0.35em] text-slate-300" : "text-xs uppercase tracking-[0.35em] text-slate-600"}>
                     <span itemProp="articleSection">{story.category || story.type || "Story"}</span>
                     {publishedDate ? ` · ${publishedDate}` : ""}
                     {readingTime ? ` · ${readingTime}` : ""}
                   </p>
-                  <h1 itemProp="headline" className={"mt-4 text-4xl font-semibold leading-tight sm:text-5xl " + (hasImage ? "text-white" : "text-slate-900")}>
+                  <h1 itemProp="headline" className={"mt-4 text-4xl font-semibold leading-tight sm:text-6xl " + (hasImage ? "text-white" : "text-slate-900")}>
                     {story.title || story.name || "Untitled Story"}
                   </h1>
                   <p className={hasImage ? "mt-4 text-sm uppercase tracking-[0.25em] text-slate-300" : "mt-4 text-sm uppercase tracking-[0.25em] text-slate-600"}>

@@ -47,12 +47,12 @@ export default function StoryCard({ story }: StoryCardProps) {
       ) : (
         <div className="h-[250px] w-full bg-slate-200" />
       )}
-      <div className="pt-6 pr-6 pb-6">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+      <div className="pt-4 pr-6 pb-6">
+        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
           {category}{date ? ` · ${date}` : ""}
         </p>
         <h4 className="text-xl font-semibold text-slate-900">{title}</h4>
-        <p className="mt-4 text-slate-600">{excerpt}</p>
+        <p className="mt-2 text-sm text-slate-600">{excerpt}</p>
       </div>
     </Link>
   );
