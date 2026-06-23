@@ -3,6 +3,9 @@ import { createClient } from "@/lib/supabase/server";
 import StoryCard from "./components/StoryCard";
 import { siteDescription, siteName } from "@/lib/site";
 
+const HERO_VIDEO_URL =
+  "https://agszpdvdluqjwfhjjtzl.supabase.co/storage/v1/object/public/Virac%20Special/home-hero.webm";
+
 export const metadata: Metadata = {
   description: siteDescription,
   openGraph: {
@@ -32,7 +35,7 @@ export default async function Home() {
   const recentStories = await getRecentStories();
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+    <main className="relative min-h-screen w-full overflow-hidden bg-slate-900 text-white">
       <section className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 py-12 sm:px-10">
         <div className="max-w-3xl text-center z-10">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-slate-200/90">
@@ -54,15 +57,18 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1f2937_0%,_#0f172a_45%,_#020617_100%)]">
           <video
             className="h-full w-full object-cover"
-            src="https://agszpdvdluqjwfhjjtzl.supabase.co/storage/v1/object/public/Virac%20Special/home-hero.webm"
+            poster="/hero-poster.svg"
+            preload="auto"
             autoPlay
             muted
             loop
             playsInline
-          />
+          >
+            <source src={HERO_VIDEO_URL} type="video/webm" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         </div>
       </section>
