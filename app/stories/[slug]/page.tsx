@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { siteName } from "@/lib/site";
 
 type Story = {
   id?: string | number;
@@ -64,17 +65,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const story = await getStory(slug);
   if (!story) {
     return {
-      title: "Story not found | Virac",
+      title: `Story not found | ${siteName}`,
       description: "The requested story could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   const title = story.title || story.name || "Untitled Story";
-  const description = story.description || story.excerpt || story.summary || `Read ${title} on Virac.`;
+  const description = story.description || story.excerpt || story.summary || `Read ${title} on ${siteName}.`;
   const image = story.large_image_url || story.thumbnail_url || story.image_url || story.cover_image;
   const publishedAt = story.published_at || story.published_date || story.created_at;
   const openGraph: Metadata["openGraph"] = {
-    title,
+    title: `${title} | ${siteName}`,
     description,
     type: "article",
     images: image ? [{ url: image }] : undefined,
@@ -89,9 +94,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph,
     twitter: {
       card: image ? "summary_large_image" : "summary",
-      title,
+      title: `${title} | ${siteName}`,
       description,
       images: image ? [image] : undefined,
+    },
+    alternates: {
+      canonical: `/stories/${slug}`,
     },
   };
 }

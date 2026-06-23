@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import StoryCard from "./components/StoryCard";
+import { siteDescription, siteName } from "@/lib/site";
+
+export const metadata: Metadata = {
+  description: siteDescription,
+  openGraph: {
+    title: siteName,
+    description: siteDescription,
+    type: "website",
+  },
+};
 
 async function getRecentStories() {
   const supabase = createClient();
